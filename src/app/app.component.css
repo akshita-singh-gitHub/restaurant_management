@@ -1,0 +1,23 @@
+/* footer{
+position: absolute;
+width: 100%;
+padding: 10px;
+left: 0%;
+bottom: 0;
+right: 35%;
+background-color: #353434;
+color: white;
+} */
+/* .navbarNav{
+background-color: black;
+color: white; */
+/* } */
+.nav-link {
+    display: block;
+    padding: 0.5rem 1rem;
+    color: black;
+    text-decoration: none;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out;
+    syntax: bold
+    ;
+}
