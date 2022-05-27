@@ -5,14 +5,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AddRestoComponent } from './add-resto/add-resto.component';
 import { UpdateRestoComponent } from './update-resto/update-resto.component';
-// import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { ListRestoComponent } from './list-resto/list-resto.component';
 import { HttpClientModule } from '@angular/common/http';
-import { ReactiveFormsModule } from '@angular/forms';
-import { LoginComponent } from './login/login.component';
+import { ReactiveFormsModule,FormsModule } from '@angular/forms';
 
-// import { TodosComponent } from './MyComponents/todos/todos.component';
+
+
+
 
 
 
@@ -25,7 +25,7 @@ import { LoginComponent } from './login/login.component';
     // LoginComponent,
     RegisterComponent,
     ListRestoComponent,
-    LoginComponent
+    // LoginComponent
     
     // TodosComponent
   ],
@@ -33,7 +33,8 @@ import { LoginComponent } from './login/login.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule
 
   ],
   providers: [],

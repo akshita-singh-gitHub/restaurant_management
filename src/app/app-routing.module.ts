@@ -13,21 +13,22 @@ const routes: Routes = [
   path: 'add'
   // , outlet:'addLet'
 },
-{
-  component: ListRestoComponent,
-  path: 'list'
-  // ,outlet:'listLet'
-},
+
 {
   component: UpdateRestoComponent,
-  path: 'update'
-  , outlet:'update'
+  path: 'update/:id'
+  // , outlet:'update'
 },
 
 {
   component: RegisterComponent,
   path: 'register'
   // , outlet:'registerLet'
+},
+{
+  component: ListRestoComponent,
+  path: ''
+  // ,outlet:'listLet'
 }
 
 // {
@@ -42,12 +43,12 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
-export const routingComponents=[
- AddRestoComponent,
- ListRestoComponent,
-//  LoginComponent,
- RegisterComponent,
- UpdateRestoComponent
+// export const routingComponents=[
+//  AddRestoComponent,
+//  ListRestoComponent,
+// //  LoginComponent,
+//  RegisterComponent,
+//  UpdateRestoComponent
  
 
-]
+// ]

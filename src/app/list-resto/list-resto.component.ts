@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AnyForUntypedForms } from '@angular/forms';
 import { RestoService } from '../resto.service';
 // import { UpdateRestoComponent } from '../update-resto/update-resto.component';
 @Component({
@@ -20,9 +21,9 @@ export class ListRestoComponent implements OnInit {
   
   }
   Delete(item:any){
-    this.collection.splice(item-1,1)
+    this.collection.splice(item,1)
     this.resto.DeleteResto(item).subscribe((result)=>{
-      console.log('result deleted');
+      console.log(result ,'result deleted');
     })
           
 

@@ -1,6 +1,10 @@
+<div id="myNavbar">
+
 <nav class="navbar navbar-expand-lg bg-light">
   <div class="container-fluid">
-    <!-- <a class="navbar-brand" href="#">Resto</a> -->
+    <li class="nav-item">
+    <a class="navbar-brand" routerLink="">Restaurant App</a>
+  </li>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
       aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -10,21 +14,21 @@
         <!-- <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="#">Home</a>
         </li> -->
-        <li><a class="nav-link "  aria-current="page" routerLink="add">Add Restaurant</a></li>
-        <li><a class="nav-link "  aria-current="page" routerLink="list">List Restaurant</a></li>
+        <li class="nav-item"><a class="nav-link "  aria-current="page" routerLink="add">Add Restaurant</a></li>
+        <li class="nav-item"><a class="nav-link "  aria-current="page" routerLink="">List Restaurant</a></li>
         <!-- <li><a class="nav-link " aria-current="page" routerLink="login">login Restaurant</a></li> -->
-        <li><a class="nav-link " aria-current="page" routerLink="register">Register Restaurant</a></li>
-        <li><a class="nav-link " aria-current="page" routerLink="update">Update Restaurant</a></li>
+        <li class="nav-item"><a class="nav-link " aria-current="page" routerLink="register">Register Restaurant</a></li>
+        <!-- <li><a class=" nav-item nav-link " aria-current="page" routerLink="update">Update Restaurant</a></li> -->
        
       </ul>
     </div>
   </div>
 </nav>
-
+</div>
 <!-- <h1>Resto App</h1> -->
 <div class="container">
   <router-outlet></router-outlet>
-  <router-outlet name="Update"></router-outlet>
+  <!-- <router-outlet name="Update"></router-outlet> -->
   <!-- <router-outlet name="registerLet"></router-outlet>
   <router-outlet name="listLet"></router-outlet>
   <router-outlet name="addLet"></router-outlet> -->

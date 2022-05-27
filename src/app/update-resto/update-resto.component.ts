@@ -16,15 +16,17 @@ alert: boolean=false;
     Email: new FormControl(''),
     Address: new FormControl('')
   })
+
+  
   ngOnInit(): void {
 
 // console.log(this.router.snapshot.params['id']);
 this.resto.DetailToEdit(this.router.snapshot.params['id']).subscribe((result:any)=>{
   // console.log(result);
   this.EditForm = new FormGroup({
-    Name: new FormControl(''),
-    Email: new FormControl(''),
-    Address: new FormControl(''),
+    Name: new FormControl(result['Name']),
+    Email: new FormControl(result['Email']),
+    Address: new FormControl(result['Address']),
   })
 
 })
