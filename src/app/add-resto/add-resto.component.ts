@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl, AbstractControl } from '@angular/forms';
+import { FormGroup, FormControl, AbstractControl,Validators } from '@angular/forms';
 import { RestoService } from '../resto.service';
-// import { observable } from 'rxjs';
+
 @Component({
   selector: 'app-add-resto',
   templateUrl: './add-resto.component.html',
@@ -9,17 +9,12 @@ import { RestoService } from '../resto.service';
 })
 export class AddRestoComponent implements OnInit {
 
-  validationMessages={
-    'Email':{
-      'emaildomain': 'email domain invalid'
-    }
-  }
 alert:boolean=false;
   constructor(private Resto: RestoService) { }
 
   RestoForm = new FormGroup({
-    Name: new FormControl(''),
-    Email: new FormControl('',emailDomain),
+    Name: new FormControl('',[Validators.required, Validators.minLength(3),Validators.pattern('^[a-zA-Z ]*$')]),
+    Email: new FormControl('',[Validators.required,Validators.email]),
     Address: new FormControl(''),
   })
 
@@ -43,15 +38,10 @@ alert:boolean=false;
   {
     this.alert=false
   }
-}
-function emailDomain(control:AbstractControl): {[key:string]:any}|null{
-  const Email: string=control.value;
-  const domain=Email.substring(Email.lastIndexOf('@')+1);
-  if(domain.toLowerCase()=== 'gmail.com'){
-    return null;
+   get Name(){
+    return this.RestoForm.get('Name');
   }
-  else {
-    return {'emailDomain':true};
+   get Email(){
+    return this.RestoForm.get('Email');
   }
-
 }
