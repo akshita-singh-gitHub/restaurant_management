@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
+import { FormGroup, FormControl,Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { RestoService } from '../resto.service';
 
@@ -12,9 +12,9 @@ export class UpdateRestoComponent implements OnInit {
 alert: boolean=false;
   constructor(private router:ActivatedRoute,private resto: RestoService) { }
   EditForm = new FormGroup({
-    Name: new FormControl(''),
-    Email: new FormControl(''),
-    Address: new FormControl('')
+    Name: new FormControl('',[Validators.required, Validators.minLength(3),Validators.pattern('^[a-zA-Z ]*$')]),
+    Email: new FormControl('',[Validators.required,Validators.email]),
+    Address: new FormControl('',[Validators.required]),
   })
 
   
@@ -42,6 +42,15 @@ console.log(result);
   CloseAlert(){
     this.alert=false;
     this.EditForm.reset({});
+  }
+  get Name(){
+    return this.EditForm.get('Name');
+  }
+   get Email(){
+    return this.EditForm.get('Email');
+  }
+   get Address(){
+    return this.EditForm.get('Address');
   }
 
   }

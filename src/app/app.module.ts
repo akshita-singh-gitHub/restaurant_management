@@ -16,18 +16,16 @@ import { ReactiveFormsModule,FormsModule } from '@angular/forms';
 
 
 
-
 @NgModule({
   declarations: [
     AppComponent,
     AddRestoComponent,
     UpdateRestoComponent,
-    // LoginComponent,
+   
     RegisterComponent,
-    ListRestoComponent,
-    // LoginComponent
+    ListRestoComponent
     
-    // TodosComponent
+    
   ],
   imports: [
     BrowserModule,
@@ -35,13 +33,18 @@ import { ReactiveFormsModule,FormsModule } from '@angular/forms';
     HttpClientModule,
     ReactiveFormsModule,
     FormsModule
+    
 
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }{
+export class AppModule {
+  constructor(){
+    console.log('app module  loaded')
+  }
+ }
   
+
  
- 
-}
+

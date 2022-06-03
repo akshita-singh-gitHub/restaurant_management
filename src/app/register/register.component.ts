@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
+import { FormGroup, FormControl,Validators } from '@angular/forms';
 import { RestoService } from '../resto.service';
+import { passwordValidator } from './passwordValidator';
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
@@ -10,11 +11,12 @@ export class RegisterComponent implements OnInit {
   alert: boolean = false;
   constructor(private resto: RestoService) {}
   RegisterForm = new FormGroup({
-    Name: new FormControl(''),
-    Email: new FormControl(''),
-    Password: new FormControl(''),
+    Name: new FormControl('',[Validators.required, Validators.minLength(3),Validators.pattern('^[a-zA-Z ]*$')]),
+    Email: new FormControl('',[Validators.required,Validators.email]),
+    Password: new FormControl('',[Validators.required,  Validators.minLength(4)]),
+    ConfirmPwd: new FormControl('',[Validators.required,Validators.minLength(4)] ),
     
-  });
+  },{validators :passwordValidator});
   ngOnInit(): void {}
   CollectUser() {
     // console.log(this.RegisterForm.value)
@@ -26,5 +28,18 @@ export class RegisterComponent implements OnInit {
   CloseAlert() {
     this.alert = false;
     this.RegisterForm.reset({});
+  }
+
+  get Name(){
+    return this.RegisterForm.get('Name');
+  }
+   get Email(){
+    return this.RegisterForm.get('Email');
+  }
+   get Password(){
+    return this.RegisterForm.get('Password');
+  }
+   get ConfirmPwd(){
+    return this.RegisterForm.get('ConfirmPwd');
   }
 }

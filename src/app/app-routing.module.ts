@@ -6,7 +6,6 @@ import { ListRestoComponent } from './list-resto/list-resto.component';
 import { RegisterComponent } from './register/register.component';
 import { UpdateRestoComponent } from './update-resto/update-resto.component';
 
-
 const routes: Routes = [
 {
   component: AddRestoComponent,
@@ -29,12 +28,13 @@ const routes: Routes = [
   component: ListRestoComponent,
   path: ''
   // ,outlet:'listLet'
-}
+},
 
-// {
-//   component: LoginComponent,
-//   path: 'login'
-// }
+{
+  path: 'company',
+  loadChildren : ()=>import('./company/company.module').then(m=>m.CompanyModule)
+ 
+}
 
 ];
 
@@ -42,13 +42,8 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
-// export const routingComponents=[
-//  AddRestoComponent,
-//  ListRestoComponent,
-// //  LoginComponent,
-//  RegisterComponent,
-//  UpdateRestoComponent
- 
-
-// ]
+export class AppRoutingModule { 
+  constructor(){
+    console.log('app routing  module loaded')
+  }
+}
