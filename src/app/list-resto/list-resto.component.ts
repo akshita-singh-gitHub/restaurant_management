@@ -10,6 +10,7 @@ import { RestoService } from '../resto.service';
 
 export class ListRestoComponent implements OnInit {
   collection:any = [];
+  nameSearch:string=''
   constructor(private resto: RestoService) { }
 
 
@@ -28,4 +29,6 @@ export class ListRestoComponent implements OnInit {
           
 
   }
+
+ 
 }

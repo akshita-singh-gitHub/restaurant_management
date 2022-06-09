@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http'
+// import { SignupComponent } from './signup/signup.component';
 
 @Injectable({
   providedIn: 'root'
@@ -31,6 +32,10 @@ return this.http.post(this.url,data);
   }
   UpdateResto(id:any,data:any){
     return this.http.put(`${this.url}/${id}`,data)
+
+  }
+  signup(News_user:any){
+    return this.http.post(this.rootURL+"News_user",News_user);
 
   }
 

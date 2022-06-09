@@ -1,0 +1,65 @@
+
+<!-- in template driven form ,we have 3 directive
+1 ngForm
+2  [(ngModel)]="userModel.name"
+3 ng Group -->
+<div class="customPipe">
+<h3>{{value | customPipe: 16}}</h3>
+<ul>
+  <li *ngFor="let name of nameArr">
+    {{name | customPipe:8}}
+
+  </li>
+</ul>
+</div>
+
+<div class="container-fluid">
+
+    <h2>Sign Up for our Newsletter</h2>
+    <form #userForm="ngForm" (ngSubmit)="onSubmit()">
+
+        <!-- {{userForm.value|json}}
+
+        <hr>
+        {{userModel|json}} -->
+        <div class="form-group">
+        <label for="Name"></label>
+        <input type="text" class="form-control" name ="Name" placeholder="your name"   [(ngModel)]="userModel.Name">
+    </div>
+    
+        <div class="form-group">
+        <label for="Email"></label>
+        <input type="Email" class="form-control" name="Email" placeholder="enter your email"  [(ngModel)]="userModel.Email">
+    </div>
+        <div class="form-group">
+        <label for="Phone"></label>
+        <input type="tel" class="form-control" name="phone" placeholder="enter your number "  [(ngModel)]="userModel.phone">
+    </div>
+    <br>
+    
+   <div>
+    <select class="form-select" aria-label="Default select example" name="Time" [(ngModel)]="userModel.Time">
+        <option selected>Select Time</option>
+        <option value="1">Daily</option>
+        <option value="2">Weekly</option>
+        <option value="3">Monthly</option>
+      </select>
+        </div>
+       <br>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="flexRadioDefault" name="Type" id="flexRadioDefault1" [(ngModel)]="userModel.Type">
+                <label class="form-check-label" for="flexRadioDefault1">
+                  Food Lover
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="flexRadioDefault" name="Type" id="flexRadioDefault2"   [(ngModel)]="userModel.Type">
+                <label class="form-check-label" for="flexRadioDefault2">
+                  Content Lover
+                </label>
+              </div>
+      
+            
+<button class="btn btn-primary" type="submit"> Submit</button>
+    </form>
+</div>

@@ -4,6 +4,7 @@ import { AddRestoComponent } from './add-resto/add-resto.component';
 import { ListRestoComponent } from './list-resto/list-resto.component';
 // import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
+import { SignupComponent } from './signup/signup.component';
 import { UpdateRestoComponent } from './update-resto/update-resto.component';
 
 const routes: Routes = [
@@ -23,6 +24,11 @@ const routes: Routes = [
   component: RegisterComponent,
   path: 'register'
   // , outlet:'registerLet'
+},
+{
+  component: SignupComponent,
+  path: 'signup'
+ 
 },
 {
   component: ListRestoComponent,

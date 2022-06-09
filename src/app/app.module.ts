@@ -9,7 +9,9 @@ import { RegisterComponent } from './register/register.component';
 import { ListRestoComponent } from './list-resto/list-resto.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule,FormsModule } from '@angular/forms';
-
+import { SignupComponent } from './signup/signup.component';
+import { CustomPipe } from './appPipes/custom.pipes';
+import { FilterPipe } from './appPipes/filter.pipe';
 
 
 
@@ -23,8 +25,10 @@ import { ReactiveFormsModule,FormsModule } from '@angular/forms';
     UpdateRestoComponent,
    
     RegisterComponent,
-    ListRestoComponent
-    
+    ListRestoComponent,
+    SignupComponent,
+    CustomPipe,
+    FilterPipe
     
   ],
   imports: [

@@ -1,4 +1,12 @@
 <h2 class="heading">Restaurant list</h2>
+
+<div class="col-md-8">
+  <div class="form-floating mb-3">
+    <input type="email" class="form-control" id="search"
+     placeholder="Search by keywords" [(ngModel)]="nameSearch">
+    <label for="search"> Search by keywords</label>
+  </div>
+</div>
 <table class="table">
   <thead>
     <tr class="tableHead">
@@ -10,11 +18,11 @@
     </tr>
   </thead>
   <tbody class="tableBody">
-    <tr *ngFor="let item of collection">
+    <tr *ngFor="let item of collection |filter: nameSearch">
       <td>{{item.id}}</td>
       <td>{{item.Name}}</td>
-      <td>{{item.Address}}</td>
       <td>{{item.Email}}</td>
+      <td>{{item.Address}}</td>
       <td> <i (click)="Delete(item.id)" class="fa fa-trash" style="font-size:20px;color:rgb(149, 48, 48);"></i>
       </td>
       <td> 
@@ -27,3 +35,6 @@
 
   </tbody>
 </table>
+
+
+

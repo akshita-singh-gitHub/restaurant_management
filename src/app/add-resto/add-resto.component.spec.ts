@@ -22,4 +22,19 @@ describe('AddRestoComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+  it('check component name',()=>{
+    expect(component.componentName).toBe('user')
+  })
+  it('check component function',()=>{
+    expect(component.numb).toBe(100)
+  })
+  it('check component function',()=>{
+    expect(component.add(30,40)).toBe(100)
+  })
+  it('check html element',()=>{
+    const collection=fixture.nativeElement
+    expect(collection.querySelector('.heading').textContent).toContain('Add Restaurant Details')
+  
+  })
+
 });

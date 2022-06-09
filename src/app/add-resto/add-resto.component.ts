@@ -9,6 +9,8 @@ import { RestoService } from '../resto.service';
 })
 export class AddRestoComponent implements OnInit {
 
+componentName="user"
+
 alert:boolean=false;
   constructor(private Resto: RestoService) { }
 
@@ -46,5 +48,11 @@ alert:boolean=false;
   }
    get Address(){
     return this.RestoForm.get('Address');
+  }
+  numb(){
+    return 100;
+  }
+  add(a:any,b:any){
+    return a+b ;
   }
 }
