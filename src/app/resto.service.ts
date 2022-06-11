@@ -5,9 +5,30 @@ import { HttpClient } from '@angular/common/http'
 @Injectable({
   providedIn: 'root'
 })
+
+
+
+// app.use(function(req:any, res:any, next:any)
+// {
+//     res.header("Access-Control-Allow-Origin", "*");
+//     res.header("Access-Control-Allow-Headers", "Origin, x-Requested-With,Content-Type,Accept");
+//     next();
+
+// });
+
 export class RestoService {
-  url = 'http://localhost:3000/restaurant';
-  rootURL = 'http://localhost:3000/';
+  url = 'https://restaurant-auth123-default-rtdb.asia-southeast1.firebasedatabase.app/restaurant';
+  rootURL = 'https://restaurant-auth123-default-rtdb.asia-southeast1.firebasedatabase.app/';
+
+  // url = 'http://localhost:3000/restaurant';
+  // rootURL = 'http://localhost:3000/';
+
+
+  // url = 'https://angulra-auth12-default-rtdb.firebaseio.com/restaurant';
+  // rootURL = 'https://angulra-auth12-default-rtdb.firebaseio.com/';
+
+
+  
 
   constructor(private http: HttpClient) { }
 

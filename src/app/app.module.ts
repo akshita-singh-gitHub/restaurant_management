@@ -12,7 +12,7 @@ import { ReactiveFormsModule,FormsModule } from '@angular/forms';
 import { SignupComponent } from './signup/signup.component';
 import { CustomPipe } from './appPipes/custom.pipes';
 import { FilterPipe } from './appPipes/filter.pipe';
-
+// import {AngularFireModule} from '@angular/fire/compat';
 
 
 
@@ -37,6 +37,14 @@ import { FilterPipe } from './appPipes/filter.pipe';
     HttpClientModule,
     ReactiveFormsModule,
     FormsModule
+    // AngularFireModule.initializeApp({
+    //   apiKey: "AIzaSyAS-oDfhtF6ikHEpfGpk1nB1K10zGhEI3w",
+    //   authDomain: "angulra-auth12.firebaseapp.com",
+    //   projectId: "angulra-auth12",
+    //   storageBucket: "angulra-auth12.appspot.com",
+    //   messagingSenderId: "1076219972956",
+    //   appId: "1:1076219972956:web:903026cfe1defe90904599"
+    // })
     
 
   ],
