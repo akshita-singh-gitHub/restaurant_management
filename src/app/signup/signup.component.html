@@ -1,92 +1,73 @@
 
-<!-- in template driven form ,we have 3 directive
-1 ngForm
-2  [(ngModel)]="userModel.name"
-3 ng Group -->
-<!-- <div class="customPipe">
-<h3>{{value | customPipe: 16}}</h3>
-<ul>
-  <li *ngFor="let name of nameArr">
-    {{name | customPipe:8}}
-
-  </li>
-</ul>
-</div>
-
-<div class="container-fluid">
-
-    <h2>Sign Up for our Newsletter</h2>
-    <form #userForm="ngForm" (ngSubmit)="onSubmit()"> -->
-
-        <!-- {{userForm.value|json}}
-
-        <hr>
-        {{userModel|json}} -->
-        <!-- <div class="form-group">
-        <label for="Name"></label>
-        <input type="text" class="form-control" name ="Name" placeholder="your name"   [(ngModel)]="userModel.Name">
-    </div>
-    
-        <div class="form-group">
-        <label for="Email"></label>
-        <input type="Email" class="form-control" name="Email" placeholder="enter your email"  [(ngModel)]="userModel.Email">
-    </div>
-        <div class="form-group">
-        <label for="Phone"></label>
-        <input type="tel" class="form-control" name="phone" placeholder="enter your number "  [(ngModel)]="userModel.phone">
-    </div>
-    <br>
-    
-   <div>
-    <select class="form-select" aria-label="Default select example" name="Time" [(ngModel)]="userModel.Time">
-        <option selected>Select Time</option>
-        <option value="1">Daily</option>
-        <option value="2">Weekly</option>
-        <option value="3">Monthly</option>
-      </select>
-        </div>
-       <br>
-            <div class="form-check">
-                <input class="form-check-input" type="radio" name="flexRadioDefault" name="Type" id="flexRadioDefault1" [(ngModel)]="userModel.Type">
-                <label class="form-check-label" for="flexRadioDefault1">
-                  Food Lover
-                </label>
-              </div>
-              <div class="form-check">
-                <input class="form-check-input" type="radio" name="flexRadioDefault" name="Type" id="flexRadioDefault2"   [(ngModel)]="userModel.Type">
-                <label class="form-check-label" for="flexRadioDefault2">
-                  Content Lover
-                </label>
-              </div>
-      
-            
-<button class="btn btn-primary" type="submit"> Submit</button>
-    </form>
-</div> -->
-
-
-
-
-
+<form>
+<div class="container-fluid ">
+  
+  <!-- <div *ngIf="alert" class="alert alert-success alert-dismissible fade show" role="alert">
+    <strong> Success!</strong> You are registered in Resto Successfully
+    <button (click)="CloseAlert()" type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div> -->
 
 <div class=" form-group input-group mb-3 w-50 ">
   <span class="input-group-text" >
   <i class="fa fa-envelope"></i>  
   </span>
   <input type="text" class="form-control" 
-  placeholder="Enter Email" >
-  <small class="form-text text-danger w-100">Please Enter Email</small>
+  placeholder="Enter Email"  name="email" [(ngModel)]="email">
+        <!-- <small  [class.d-none]="this.email?.valid || this.email?.untouched"  class="text-danger " > Name is Required</small>
+
+  <small class="form-text text-danger w-100">Please Enter Email</small> -->
 </div>
 <div class=" form-group input-group mb-3  w-50">
   <span class="input-group-text" >
   <i class="fa fa-lock"></i>  
   </span>
-  <input type="text" class="form-control" 
-  placeholder="Enter Password" >
-  <small class="form-text text-danger w-100">Please Enter Email</small>
+  <input type="password" class="form-control" 
+  placeholder="Enter Password"  name="password"  [(ngModel)]="password" >
+  <!-- <small class="form-text text-danger w-100">Please Enter Email</small> -->
 
 </div>
 <div class="form-group">
-  <button type="button" class="btn btn-primary">Sign In</button>
+  <button type="button" class="btn btn-primary" (click)="signup()">Sign In</button>
   
 </div>
+</div>
+
+</form>
+
+
+
+
+
+
+<!-- <div class="container-fluid">
+  <div class="row mt-5">
+    <div class="col"></div>
+    <div class="col-4">
+<div class="card shadow">
+  <div class="card-body">
+    <form>
+      <div class="mb-3">
+        <h4 class="text-dark text-muted">Signup</h4>
+      </div>
+      <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Email address</label>
+        <input type="email" class="form-control" name="email" [(ngModel)]="email" >
+      </div>
+      <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Password</label>
+        <input type="password" class="form-control" name="password" [(ngModel)]="password"  >
+      </div>
+  
+      <button type="button" class="btn btn-info"  (click)="signup()">signup</button>
+      <div class="row">
+     
+      </div>
+    </form>
+  </div>
+</div>
+    </div>
+    <div class="col"></div>
+  </div>
+</div> -->

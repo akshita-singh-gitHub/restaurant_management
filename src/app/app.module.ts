@@ -10,12 +10,22 @@ import { ListRestoComponent } from './list-resto/list-resto.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule,FormsModule } from '@angular/forms';
 import { SignupComponent } from './signup/signup.component';
-import { CustomPipe } from './appPipes/custom.pipes';
+// import { CustomPipe } from './appPipes/custom.pipes';
 import { FilterPipe } from './appPipes/filter.pipe';
-// import {AngularFireModule} from '@angular/fire/compat';
+import {AngularFireModule} from '@angular/fire/compat';
+import { environment } from 'src/environments/environment';
+import { OrdersComponent } from './orders/orders.component';
+import { OrderListComponent } from './order-list/order-list.component';
+// import {AngularFireDatabaseModule} from '@angular/fire/compat/database';
 
-
-
+export const firebaseConfig = {
+  apiKey: "AIzaSyDoXsIfgzOtUueno6qnlwdRM5Vi7dcee2k",
+  authDomain: "restaurant-authen12.firebaseapp.com",
+  projectId: "restaurant-authen12",
+  storageBucket: "restaurant-authen12.appspot.com",
+  messagingSenderId: "71740041038",
+  appId: "1:71740041038:web:6859cb83f79bfd8f61601f"
+};
 
 
 @NgModule({
@@ -27,8 +37,10 @@ import { FilterPipe } from './appPipes/filter.pipe';
     RegisterComponent,
     ListRestoComponent,
     SignupComponent,
-    CustomPipe,
-    FilterPipe
+    // CustomPipe,
+    FilterPipe,
+    OrdersComponent,
+    OrderListComponent
     
   ],
   imports: [
@@ -36,16 +48,9 @@ import { FilterPipe } from './appPipes/filter.pipe';
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
-    FormsModule
-    // AngularFireModule.initializeApp({
-    //   apiKey: "AIzaSyAS-oDfhtF6ikHEpfGpk1nB1K10zGhEI3w",
-    //   authDomain: "angulra-auth12.firebaseapp.com",
-    //   projectId: "angulra-auth12",
-    //   storageBucket: "angulra-auth12.appspot.com",
-    //   messagingSenderId: "1076219972956",
-    //   appId: "1:1076219972956:web:903026cfe1defe90904599"
-    // })
-    
+    FormsModule,
+    AngularFireModule.initializeApp(environment.firebase)
+    // AngularFireDatabaseModule,
 
   ],
   providers: [],

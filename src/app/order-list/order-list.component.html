@@ -1,0 +1,30 @@
+  
+<h2 class="heading">Order list</h2>
+
+<table class="table">
+  <thead>
+    <tr class="tableHead">
+      <th scope="col">#</th>
+      <th scope="col">Name</th>
+      <th scope="col">Food</th>
+      <th scope="col">Email</th>
+      <th scope="col">Address</th>
+     
+    </tr>
+  </thead>
+  <tbody class="tableBody">
+    <tr *ngFor="let item of OrderList ">
+      <td>{{item.id}}</td>
+      <td>{{item.Name}}</td>
+      <td>{{item.Food}}</td>
+      <td>{{item.Email}}</td>
+      <td>{{item.Address}}</td>
+      
+      
+    </tr>
+
+  </tbody>
+</table>
+
+
+

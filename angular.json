@@ -29,11 +29,8 @@
             "styles": [
               "./node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/styles.css"
-             
             ],
-            "scripts": [
-              
-            ]
+            "scripts": []
           },
           "configurations": {
             "production": {
@@ -101,6 +98,16 @@
               "src/styles.css"
             ],
             "scripts": []
+          }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "prerender": false,
+            "ssr": false,
+            "browserTarget": "blog:build:production",
+            "firebaseProject": "resto-authentication12",
+            "firebaseHostingSite": "resto-authentication12"
           }
         }
       }
