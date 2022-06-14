@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl ,Validators } from '@angular/forms';
+import { FoodService } from '../service/food/food.service';
 import { RestoService } from '../resto.service';
+import { FoodDetail } from '../shared/models/foodDetail';
+// import { StarRatingComponent } from 'ng-starrating';
 @Component({
   selector: 'app-orders',
   templateUrl: './orders.component.html',
@@ -8,8 +11,9 @@ import { RestoService } from '../resto.service';
 })
 export class OrdersComponent implements OnInit {
 
+  FoodImages:FoodDetail[]=[];
   alert:boolean=false;
-  constructor(private Resto: RestoService) { }
+  constructor(private FoodServ: FoodService , private resto: RestoService) { }
 
   OrderForm = new FormGroup({
     Name: new FormControl('',[Validators.required, Validators.minLength(3),Validators.pattern('^[a-zA-Z ]*$')]),
@@ -20,12 +24,13 @@ export class OrdersComponent implements OnInit {
 
 
   ngOnInit(): void {
+    this.FoodImages=this.FoodServ.getImages();
   }
 
   CollectOrder() {
     // console.log(this.OrderForm.value);
 
-    this.Resto.SaveOrder(this.OrderForm.value).subscribe((result:any)=>{
+    this.resto.SaveOrder(this.OrderForm.value).subscribe((result:any)=>{
       console.log(result)
       this.alert=true
       this.OrderForm.reset({})
@@ -46,6 +51,10 @@ export class OrdersComponent implements OnInit {
    get Address(){
     return this.OrderForm.get('Address');
   }
+
+
+
+
   
 }
 

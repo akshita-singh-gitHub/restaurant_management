@@ -22,21 +22,10 @@ import { Router } from '@angular/router';
 
 export class RestoService {
 
-  // url = 'https://restaurant-auth12-default-rtdb.firebaseio.com/restaurant';
-  // rootURL = 'https://restaurant-auth12-default-rtdb.firebaseio.com/'
-  
-  // url = 'https://restaurant-auth123-default-rtdb.asia-southeast1.firebasedatabase.app/restaurant';
-  // rootURL = 'https://restaurant-auth123-default-rtdb.asia-southeast1.firebasedatabase.app/';
 
   url = 'http://localhost:3000/restaurant';
   rootURL = 'http://localhost:3000/';
 
-
-  // url = 'https://angulra-auth12-default-rtdb.firebaseio.com/restaurant';
-  // rootURL = 'https://angulra-auth12-default-rtdb.firebaseio.com/';
-
-
-  
 
   constructor(private http: HttpClient, private fireauth: AngularFireAuth, private router :Router) { }
 
@@ -112,5 +101,8 @@ this.router.navigate(['/signup'])
     }
     )
   }
+
+
+
 
 }

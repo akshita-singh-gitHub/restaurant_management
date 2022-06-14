@@ -1,4 +1,4 @@
-<h3 class="heading">Add Restaurant Details</h3>
+<!-- <h3 class="heading">Add Restaurant Details</h3>
 <div *ngIf="alert" class="alert alert-success alert-dismissible fade show" role="alert">
   <strong> Success!</strong> Your order has been placed
   <button (click)="CloseAlert()" type="button" class="close" data-dismiss="alert" aria-label="Close">
@@ -10,8 +10,8 @@
       <label for="exampleInputEmail1" class="form-label" >Name </label>
       <input   type="text"  class="form-control"  formControlName="Name"  placeholder="Enter Your Name Here">
       
-      <!-- <small  [class.d-none]="Name?.valid || Name?.untouched"  class="text-danger " > Name is Required</small>
-      using ngIf for conditionally showing msg nd not d-none class -->
+      <small  [class.d-none]="Name?.valid || Name?.untouched"  class="text-danger " > Name is Required</small>
+      using ngIf for conditionally showing msg nd not d-none class
 
       <div *ngIf="Name?.invalid && Name?.touched">
       <small *ngIf="Name?.errors?.['required']" class="text-danger " > Name is Required</small>
@@ -55,4 +55,39 @@
 
 
 
+ -->
 
+
+
+
+
+<div id="order" class="order-container">
+
+<ul>
+  <li  *ngFor="let food of FoodImages">
+   <a >
+   <img src="{{food.imageUrl}}" alt="">
+  <div class="content">
+  <div class="name">
+    {{food.name}}
+  </div>
+  <span class="favourite {{food.favourite?'':'not'}}">
+    <i class="fa fa-heart" aria-hidden="true"></i>
+  </span>
+  <div class="product-item-footer">
+    <div class="cook-time">
+      <span>
+        🕑
+      </span>
+{{food.CookTime}}
+    </div>
+    <div class="price">
+      {{food.price| currency}}
+    </div>
+  </div>
+  </div>
+  </a>
+
+  </li>
+</ul>
+</div>

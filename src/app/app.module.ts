@@ -16,7 +16,8 @@ import {AngularFireModule} from '@angular/fire/compat';
 import { environment } from 'src/environments/environment';
 import { OrdersComponent } from './orders/orders.component';
 import { OrderListComponent } from './order-list/order-list.component';
-// import {AngularFireDatabaseModule} from '@angular/fire/compat/database';
+
+// import { RatingModule } from 'ng-starrating';
 
 export const firebaseConfig = {
   apiKey: "AIzaSyDoXsIfgzOtUueno6qnlwdRM5Vi7dcee2k",
@@ -49,8 +50,9 @@ export const firebaseConfig = {
     HttpClientModule,
     ReactiveFormsModule,
     FormsModule,
+    // RatingModule,
     AngularFireModule.initializeApp(environment.firebase)
-    // AngularFireDatabaseModule,
+   
 
   ],
   providers: [],
