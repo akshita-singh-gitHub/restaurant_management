@@ -1,11 +1,24 @@
 import { Injectable } from '@angular/core';
 import { FoodDetail } from 'src/app/shared/models/foodDetail';
+import { HttpClient } from '@angular/common/http'
 @Injectable({
   providedIn: 'root'
 })
 export class FoodService {
 
-  constructor() { }
+  
+  url = 'http://localhost:3000/Orders';
+
+  constructor(private http: HttpClient) { }
+
+  FoodDetails(id:any){
+    return this.http.get(`${this.url}/${id}`)
+   }
+
+   SaveOrder(OrderDetails:any){
+    // console.log(data);
+return this.http.post(this.url,OrderDetails);
+  }
 
   getImages():FoodDetail[]{
     return [
@@ -14,7 +27,7 @@ export class FoodService {
     id: 1,
       name: 'Corn Curry',
        price: 500,
-      favourite: false,
+      favourite: true,
       star: 3,
       tags:['fast food','spicy ', 'lunch'],
       imageUrl:'/assets/corn-curry.jpg',
@@ -24,7 +37,7 @@ export class FoodService {
   },
   {
     id: 2,
-      name: 'Corn Curry',
+      name: 'Biryani',
        price: 500,
       favourite: false,
       star: 3,
@@ -36,7 +49,7 @@ export class FoodService {
   },
   {
     id: 3,
-      name: 'Corn Curry',
+      name: 'Dosa',
        price: 500,
       favourite: false,
       star: 3,
@@ -48,9 +61,9 @@ export class FoodService {
   },
   {
     id: 4,
-      name: 'Corn Curry',
+      name: 'Idli',
        price: 500,
-      favourite: false,
+      favourite: true,
       star: 3,
       tags:['fast food','spicy ', 'lunch'],
       imageUrl:  '/assets/idli.jpg',
@@ -60,9 +73,9 @@ export class FoodService {
   },
   {
     id: 5,
-      name: 'Corn Curry',
+      name: 'Brownies',
        price: 500,
-      favourite: false,
+      favourite: true,
       star: 3,
       tags:['fast food','spicy ', 'lunch'],
       imageUrl: '/assets/brownies.jpg',
@@ -72,7 +85,7 @@ export class FoodService {
   },
   {
     id: 6,
-      name: 'Corn Curry',
+      name: 'Paneer Naan',
        price: 500,
       favourite: false,
       star: 3,
@@ -84,7 +97,7 @@ export class FoodService {
   },
   {
     id: 7,
-      name: 'Corn Curry',
+      name: 'Momos',
        price: 500,
       favourite: false,
       star: 3,
@@ -96,7 +109,7 @@ export class FoodService {
   },
   {
     id: 8,
-      name: 'Corn Curry',
+      name: 'Cheesecake',
        price: 500,
       favourite: false,
       star: 3,

@@ -16,6 +16,8 @@ import {AngularFireModule} from '@angular/fire/compat';
 import { environment } from 'src/environments/environment';
 import { OrdersComponent } from './orders/orders.component';
 import { OrderListComponent } from './order-list/order-list.component';
+import { CheckoutComponent } from './checkout/checkout.component';
+
 
 // import { RatingModule } from 'ng-starrating';
 
@@ -41,7 +43,8 @@ export const firebaseConfig = {
     // CustomPipe,
     FilterPipe,
     OrdersComponent,
-    OrderListComponent
+    OrderListComponent,
+    CheckoutComponent
     
   ],
   imports: [

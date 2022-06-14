@@ -87,6 +87,14 @@
       "Email": "taavi123@gmail.com",
       "Address": "kanpur",
       "id": 3
+    },
+ 
+    {
+      "Name": "akira",
+      "Email": "akira123@gmail.com",
+      "Address": "moga",
+      "Food": "Pastries",
+      "id": 5
     }
   ]
 }

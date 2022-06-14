@@ -8,6 +8,7 @@ import { SignupComponent } from './signup/signup.component';
 import { UpdateRestoComponent } from './update-resto/update-resto.component';
 import { OrdersComponent } from './orders/orders.component';
 import { OrderListComponent } from './order-list/order-list.component';
+import { CheckoutComponent } from './checkout/checkout.component';
 
 
 const routes: Routes = [
@@ -41,6 +42,11 @@ const routes: Routes = [
 {
   component: OrderListComponent,
   path: 'OrderList'
+ 
+},
+{
+  component: CheckoutComponent,
+  path: 'checkout/:id'
  
 },
 {

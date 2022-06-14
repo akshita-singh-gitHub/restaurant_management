@@ -11,15 +11,6 @@ import { Router } from '@angular/router';
 })
 
 
-
-// app.use(function(req:any, res:any, next:any)
-// {
-//     res.header("Access-Control-Allow-Origin", "*");
-//     res.header("Access-Control-Allow-Headers", "Origin, x-Requested-With,Content-Type,Accept");
-//     next();
-
-// });
-
 export class RestoService {
 
 

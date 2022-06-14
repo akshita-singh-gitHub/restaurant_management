@@ -2,15 +2,20 @@
 
 
 
+    #myNavbar{
+        background-color: #4f714f;
+        
+    }
 
 .navbar{
     background-color: transparent !important;
+    
 }
 
 #myNavbar::before{
     content: "";
     position: absolute;
-    background: url('bg1.jpg') no-repeat center center/cover;
+    /* background: url('bg1.jpg') no-repeat center center/cover; */
     height: 100%;
     top:0px;
     left:0px;
@@ -28,11 +33,11 @@
     /* font-size: 0.9rem; */
 
 }
-.navbar .RestoLink a:hover{
+/* .navbar .RestoLink a:hover{
     color: black;
     background-color: white;
 
-}
+} */
 .navbar .navbar-nav{
  margin: 0 auto
 }

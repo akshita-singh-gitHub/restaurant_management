@@ -1,10 +1,18 @@
 
-
+.heading{
+    margin: 23px 307px;
+    padding: 20px 267px;
+    align-items: center;
+    font-size: 2rem;
+}
 .order-container{
     margin: 0%;
-    
    
 }
+
+
+
+
 
 .order-container ul{
     display: flex;
@@ -12,10 +20,10 @@
     align-items: center;
     flex-wrap: wrap;
     list-style: none;
-    padding: 0;
+    padding-top: 0;
 }
 .order-container ul li a{
-    height: 20rem;
+    height: 24rem;
     width: 26rem;
     border: 1px solid whitesmoke;
     border-radius: 1rem;
@@ -36,5 +44,51 @@ li a:hover{
     height: 14rem;
     width: 26rem;
     
-    
 }
+.content{
+    padding: .5rem 1rem;
+    position: relative;  
+    
+     
+}
+.favourite{
+    position: absolute;
+    top: .5rem;
+    right: 1rem;
+    font-size: 1.2rem;
+
+}
+.favourite.not{
+    color: #00000063;
+}
+
+.product-item-footer{
+   display: flex;
+   justify-content: right;
+   align-items: center;
+}
+
+
+.btn{
+    /* padding: 6px 20px; */
+    border: 2px solid white;
+    background-color: #467546;
+    color: white;
+    margin: 17px 122px;
+    /* padding: 23px 23px; */
+    /* font-size: 1.5rem; */
+    border-radius: 10px;
+    cursor:pointer;
+    align-items: center;
+
+}
+
+ul li a{
+    text-decoration: none;
+}
+ul li a:hover button{
+   color: white;
+   background-color: black;
+
+}
+
