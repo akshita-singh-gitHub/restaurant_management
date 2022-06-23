@@ -88,13 +88,19 @@
       "Address": "kanpur",
       "id": 3
     },
- 
     {
       "Name": "akira",
       "Email": "akira123@gmail.com",
       "Address": "moga",
       "Food": "Pastries",
       "id": 5
+    },
+    {
+      "Name": "",
+      "Email": "",
+      "Address": "",
+      "Food": "Pastries",
+      "id": 6
     }
   ]
 }

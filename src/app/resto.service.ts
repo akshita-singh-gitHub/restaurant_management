@@ -2,6 +2,9 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http'
 import {AngularFireAuth} from '@angular/fire/compat/auth';
 import { Router } from '@angular/router';
+import { environment } from 'src/environments/environment';
+import { RestoList } from './model';
+import { Observable } from 'rxjs/internal/Observable';
 // import { AngularFireDatabase } from '@angular/fire/compat/database';
 
 // import { SignupComponent } from './signup/signup.component';
@@ -14,41 +17,50 @@ import { Router } from '@angular/router';
 export class RestoService {
 
 
+  // url = 'http://localhost:5194/api/restaurant';
+  // rootURL = 'http://localhost:5194/api';
+
   url = 'http://localhost:3000/restaurant';
   rootURL = 'http://localhost:3000/';
+
+   private URL ="Restaurant"
 
 
   constructor(private http: HttpClient, private fireauth: AngularFireAuth, private router :Router) { }
 
-  getList() {
-    return this.http.get(this.url);
-
+   public getList(): Observable<RestoList[]> {
+    // return this.http.get(this.url);
+    return this.http.get<RestoList[]>(`${environment.apiUrl}/${this.URL}`) ;
   }
   getOrderList() {
     return this.http.get(this.rootURL+"Orders");
 
   }
-  SaveResto(data:any){
+  SaveResto(data:RestoList) : Observable<RestoList[]>{
     // console.log(data);
-return this.http.post(this.url,data);
+// return this.http.post(this.url,data);
+return this.http.post<RestoList[]>(`${environment.apiUrl}/${this.URL}`, data) ;
   }
   SaveOrder(OrderDetails:any){
     // console.log(data);
 return this.http.post(this.rootURL+"Orders",OrderDetails);
   }
-  DeleteResto(id:any)
+  DeleteResto(id:number)
   {
-    return this.http.delete(`${this.url}/${id}`);
+    // return this.http.delete(`${this.url}/${id}`);
+    return this.http.delete<RestoList[]>(`${environment.apiUrl}/${this.URL}/${id}`) ;
   }
 
   RegisterUser(UserDetails:any){
    return this.http.post(this.rootURL+"user",UserDetails);
   }
-  DetailToEdit(id:any){
-   return this.http.get(`${this.url}/${id}`)
+  DetailToEdit(id:number)  : Observable<RestoList[]>{
+  //  return this.http.get(`${this.url}/${id}`)
+  return this.http.get<RestoList[]>(`${environment.apiUrl}/${this.URL}/${id}`) ;
   }
-  UpdateResto(id:any,data:any){
-    return this.http.put(`${this.url}/${id}`,data)
+  UpdateResto(id:number,data:RestoList) : Observable<RestoList[]> {
+    // return this.http.put(`${this.url}/${id}`,data)
+    return this.http.put<RestoList[]>(`${environment.apiUrl}/${this.URL}/${id}`, data) ;
 
   }
   // signup(News_user:any){

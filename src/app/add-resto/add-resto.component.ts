@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { FormGroup, FormControl ,Validators } from '@angular/forms';
+import { RestoList } from '../model';
 import { RestoService } from '../resto.service';
 
 @Component({
@@ -9,15 +10,16 @@ import { RestoService } from '../resto.service';
 })
 export class AddRestoComponent implements OnInit {
 
-componentName="user"
+  @Input() ListItem?: RestoList;
+componentname="user"
 
 alert:boolean=false;
   constructor(private Resto: RestoService) { }
 
   RestoForm = new FormGroup({
-    Name: new FormControl('',[Validators.required, Validators.minLength(3),Validators.pattern('^[a-zA-Z ]*$')]),
-    Email: new FormControl('',[Validators.required,Validators.email]),
-    Address: new FormControl('',[Validators.required]),
+    name: new FormControl('',[Validators.required, Validators.minLength(3),Validators.pattern('^[a-zA-Z ]*$')]),
+    email: new FormControl('',[Validators.required,Validators.email]),
+    address: new FormControl('',[Validators.required]),
   })
 
   ngOnInit(): void {
@@ -28,7 +30,7 @@ alert:boolean=false;
   CollectResto() {
     // console.log(this.RestoForm.value);
 
-    this.Resto.SaveResto(this.RestoForm.value).subscribe((result:any)=>{
+    this.Resto.SaveResto(this.RestoForm.value).subscribe((result:RestoList[])=>{
       console.log(result)
       this.alert=true
       this.RestoForm.reset({})
@@ -40,14 +42,14 @@ alert:boolean=false;
   {
     this.alert=false
   }
-   get Name(){
-    return this.RestoForm.get('Name');
+   get name(){
+    return this.RestoForm.get('name');
   }
-   get Email(){
-    return this.RestoForm.get('Email');
+   get email(){
+    return this.RestoForm.get('email');
   }
-   get Address(){
-    return this.RestoForm.get('Address');
+   get address(){
+    return this.RestoForm.get('address');
   }
   numb(){
     return 100;

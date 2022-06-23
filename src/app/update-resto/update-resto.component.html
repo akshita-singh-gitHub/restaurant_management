@@ -9,32 +9,32 @@
   </div>
 <form [formGroup]="EditForm" (ngSubmit)='CollectData()' >
   <div class="mb-3" > 
-    <label for="exampleInputEmail1" class="form-label" >Name </label>
-    <input [class.is-invalid]="Name?.invalid && Name?.touched "  type="text"  class="form-control"  formControlName="Name"  placeholder="Enter Your Name Here">
+    <label for="exampleInputemail1" class="form-label" >name </label>
+    <input [class.is-invalid]="name?.invalid && name?.touched "  type="text"  class="form-control"  formControlName="name"  placeholder="Enter Your name Here">
     
-    <!-- <small  [class.d-none]="Name?.valid || Name?.untouched"  class="text-danger " > Name is Required</small> -->
+    <!-- <small  [class.d-none]="name?.valid || name?.untouched"  class="text-danger " > name is Required</small> -->
     <!-- using ngIf for conditionally showing msg nd not d-none class -->
 
-    <div *ngIf="Name?.invalid && Name?.touched">
-    <small *ngIf="Name?.errors?.['required']" class="text-danger " > Name is Required</small>
-    <small *ngIf="Name?.errors?.['minlength']" class="text-danger " > Minimum characters should be 3</small>
-    <small *ngIf="Name?.errors?.['pattern']" class="text-danger " >only a-z ,A-Z character can be used</small>
+    <div *ngIf="name?.invalid && name?.touched">
+    <small *ngIf="name?.errors?.['required']" class="text-danger " > name is Required</small>
+    <small *ngIf="name?.errors?.['minlength']" class="text-danger " > Minimum characters should be 3</small>
+    <small *ngIf="name?.errors?.['pattern']" class="text-danger " >only a-z ,A-Z character can be used</small>
   </div>
     <div id="emailHelp" class="form-text"></div>
   </div>
   <div class="mb-3">
-    <label for="exampleInputEmail1" class="form-label"> Address</label>
-    <input  [class.is-invalid]="Address?.invalid && Address?.touched "  type="text" class="form-control"   formControlName="Address" placeholder="Enter Address">
-     <small  [class.d-none]="Address?.valid || Address?.untouched"  class="text-danger " > Address is Required</small>
+    <label for="exampleInputemail1" class="form-label"> address</label>
+    <input  [class.is-invalid]="address?.invalid && address?.touched "  type="text" class="form-control"   formControlName="address" placeholder="Enter address">
+     <small  [class.d-none]="address?.valid || address?.untouched"  class="text-danger " > address is Required</small>
 
     <div id="emailHelp" class="form-text"></div>
   </div>
   <div class="mb-3">
-    <label for="exampleInputEmail1" class="form-label">Email address</label>
-    <input [class.is-invalid]="Email?.invalid && Email?.touched " type="email" class="form-control"  formControlName="Email" placeholder="We'll never share your email with anyone else." >
-    <div *ngIf="Name?.invalid && Name?.touched">
-      <small *ngIf="Email?.errors?.['required']" class="text-danger " > Name is Required</small>
-      <small *ngIf="Email?.errors?.['email']" class="text-danger " > It should be of Email format</small>
+    <label for="exampleInputemail1" class="form-label">email address</label>
+    <input [class.is-invalid]="email?.invalid && email?.touched " type="email" class="form-control"  formControlName="email" placeholder="We'll never share your email with anyone else." >
+    <div *ngIf="name?.invalid && name?.touched">
+      <small *ngIf="email?.errors?.['required']" class="text-danger " > name is Required</small>
+      <small *ngIf="email?.errors?.['email']" class="text-danger " > It should be of email format</small>
     </div>
     <div id="emailHelp" class="form-text"></div>
   </div>

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { AnyForUntypedForms } from '@angular/forms';
+import { RestoList } from '../model';
+// import { AnyForUntypedForms } from '@angular/forms';
 import { RestoService } from '../resto.service';
 // import { UpdateRestoComponent } from '../update-resto/update-resto.component';
 @Component({
@@ -9,13 +10,13 @@ import { RestoService } from '../resto.service';
 })
 
 export class ListRestoComponent implements OnInit {
-  collection:any = [];
+  collection: RestoList[] = [];
   nameSearch:string=''
   constructor(private resto: RestoService) { }
 
 
   ngOnInit(): void {
-    this.resto.getList().subscribe((result) => {
+    this.resto.getList().subscribe((result: RestoList[]) => {
       // console.log(result);
       this.collection = result;
     })
@@ -23,7 +24,7 @@ export class ListRestoComponent implements OnInit {
   }
   Delete(item:any){
     this.collection.splice(item,1)
-    this.resto.DeleteResto(item).subscribe((result)=>{
+    this.resto.DeleteResto(item).subscribe((result )=>{
       console.log(result ,'result deleted');
     })
           

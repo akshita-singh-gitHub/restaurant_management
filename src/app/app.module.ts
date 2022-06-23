@@ -17,6 +17,8 @@ import { environment } from 'src/environments/environment';
 import { OrdersComponent } from './orders/orders.component';
 import { OrderListComponent } from './order-list/order-list.component';
 import { CheckoutComponent } from './checkout/checkout.component';
+import { TrialComponent } from './trial/trial.component';
+import { EditTrialComponent } from './edit-trial/edit-trial.component';
 
 
 // import { RatingModule } from 'ng-starrating';
@@ -44,7 +46,9 @@ export const firebaseConfig = {
     FilterPipe,
     OrdersComponent,
     OrderListComponent,
-    CheckoutComponent
+    CheckoutComponent,
+    TrialComponent,
+    EditTrialComponent
     
   ],
   imports: [
